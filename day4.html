@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+</body>
+ <script>
+        document.write("<p>1.Print numbers from 1 to 10 using a for loop.  </p>");
+        //1.Print numbers from 1 to 10 using a for loop.  
+        for(let i=1;i<=10;i++)
+        {
+            document.write(i+"<br>");
+        }
+    document.write("<hr>");
+
+        document.write("<p>2.Print even numbers from 2 to 20 using a for loop.</p>");
+        //2.Print even numbers from 2 to 20 using a for loop.
+        for(let j=1;j<=20;j++)
+        {
+           if(j%2==0)
+           {
+             document.write(j+"<BR>");
+           }
+        }
+    document.write("<hr>");
+
+        //3.Print numbers from 10 to 1 using a while loop.  
+        document.write("<p>3.Print numbers from 10 to 1 using a while loop.  </p>");
+        let k=10;
+        while( k>=1)
+        {
+            document.write(k+"<BR>");
+            k--;
+        }
+    document.write("<hr>");
+
+        //4.Print "Hello World!" 5 times using a do-while loop.
+        document.write("<P>4.Print Hello World! 5 times using a do-while loop.</p>");
+           let m=1;
+            do{
+                document.write("Hello World!"+"<BR>");
+                m++;
+            }
+            while(m<5);
+document.write("<br>");    document.write("<hr>");
+
+            //5.Iterate over an array and print each element using a for...of loop.  
+            document.writeln("<P>5.Iterate over an array and print each element using a for...of loop.  </P>")
+            let fruits=["Apple","Orange","Banana","Cherry","Pineapple","Grapes","Jackfruit"]
+            for(fruit of fruits)
+            {
+                document.write(fruit +"<BR>");
+            }
+document.write("<br>");    document.write("<hr>");
+
+            //6.Iterate over an object and print its properties using a for...in loop
+            document.writeln("<p>6.Iterate over an object and print its properties using a for...in loop</P>");
+            document
+            let car={name:"Toyoyta",model:2006,"Engine":"200rpm","cylinder":4};
+            for(let y in car)
+            {
+                document.write(car[y]+"<BR>");
+            }
+
+            document.write("<br>");
+    document.write("<hr>");
+
+            //7.Sum numbers from 1 to 10 using a for loop.  
+            document.writeln("<P>7.Sum numbers from 1 to 10 using a for loop.  </P>");
+            let z=1,sum=0;
+            for(z=1;z<=10;z++)
+            {
+                sum+=z;
+            }
+            document.write(sum+"<BR>");
+
+                 document.write("<BR>");    document.write("<hr>");
+
+                //8.Find the first number greater than 50 in an array using break. 
+                document.writeln("<P>8.Find the first number greater than 50 in an array using break. </P>");
+                let array=[10,50,30,70,500,35,60,80];
+                for(let o of array)
+                {
+                    if(o>50)
+                    {
+                        document.write(o+"<BR>");
+                        break;
+                    }
+                }
+ document.write("<BR>");    document.write("<hr>");
+
+                //9.Skip printing numbers divisible by 3 using continue.
+                document.writeln("<P>9.Skip printing numbers divisible by 3 using continue.</P>");
+                for(let p=1;p<=30;p++)
+                {
+
+                    if(p%3==0)
+                    {
+                        continue;
+                    }
+                    document.write(p+"<BR>");
+                }
+                 document.write("<BR>");
+    document.write("<hr>");
+
+                    //10.Create a multiplication table for 5 using a for loop. 
+                    document.writeln("<P>10.Create a multiplication table for 5 using a for loop. </p>"); 
+for (let w = 1; w <= 10; w++) {
+    document.write(`${w} * 5 = ${w * 5} <br>`);
+}
+                 document.write("<BR>");
+    document.write("<hr>");
+
+//11.Reverse a string using a loop.
+document.writeln("<P>11.Reverse a string using a loop.</p>");
+let name="Sheeba";
+for(let i in name)
+{
+   document.write(name[i]+"<BR>");
+}
+    document.write("<hr>");
+
+
+//12.Count the number of vowels in a string using a loop.  
+document.writeln("<P>12.Count the number of vowels in a string using a loop.  </p>");
+let word="elephant";
+let count_vowel=0;
+for(let i of word)
+{
+    if(i=="e"||i=="a"||i=="i"||i=="o"||i=="u")
+    {
+        count_vowel+=1;
+    }
+   
+} document.writeln(count_vowel+"<BR>");
+                     document.write("<BR>");
+    document.write("<hr>");
+
+
+
+//13.Find the largest number in an array using a loop
+document.writeln("<P>13.Find the largest number in an array using a loop</p>");
+let array_1=[10,30,20,1,5,80,6,70,55];
+let max_num=0;
+for(let y of array_1)
+{
+    if(array_1[y]>max_num)
+    {
+        max_num=array_1[y];
+    }
+}
+document.write(max_num);
+document.write("<BR>");
+document.write("<BR>");
+    document.write("<hr>");
+
+//14.Print all odd numbers between 1–50 using a for loop
+document.writeln("<P>14.Print all odd numbers between 1–50 using a for loop</p>");
+for(let i=1;i<=50;i++)
+{
+    if(i%2!=0)
+    {
+        document.write(i+" ");
+    }
+}
+
+    document.write("<BR>");
+    document.write("<BR>");
+    document.write("<hr>");
+
+//15.Calculate and print the sum of even numbers between 1–100 
+document.writeln("<P>15.Calculate and print the sum of even numbers between 1–100</p>");
+let even_sum=0;
+for(let i=1;i<=100;i++)
+{
+    if(i%2==0)
+    {
+        even_sum+=i;
+    }
+}
+document.writeln(even_sum+"<BR>");
+
+
+
+
+
+    document.write("<BR>");
+
+    </script>
+</html>

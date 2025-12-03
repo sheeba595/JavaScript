@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+    <script>
+        //1.Write a program that calculates the total price of 3 products.  
+        let price_1=10;
+        let price_2=110;
+        let price_3=200;
+        console.log(price_1+price_2+price_3);
+        document.write(price_1+price_2+price_3 +"<br>");
+
+        //2.Create a script that checks if a number is even or odd using the modulus operator.
+        let num1=21;
+        if(num1%2==0)
+        {
+            console.log("Even");
+            document.write("Even" +"<br>");
+        }
+        else{
+            console.log("Odd");
+            document.writeln("Odd" +"<br>");
+        }
+
+        //3.Write a program that increments a number from 1 to 10 using ++. 
+        let a=1;
+        document.write(a++ +"<br>");
+        document.write(a++ +"<br>");
+        document.write(a++ +"<br>");
+        document.write(a++ +"<br>");
+        document.write(a++ +"<br>");
+        document.write(a++ +"<br>");
+        document.write(a++ +"<br>");
+        document.write(a++ +"<br>");
+        document.write(a++ +"<br>");
+        document.write(a++ +"<br>");
+
+//4.Check if a user is eligible to vote using comparison operators.  
+let user_age=21;
+if(user_age>=18)
+{
+    console.log("Eligible");
+    document.write("Eligible"+"<br>");
+}
+else{
+     console.log("Not Eligible");
+    document.write("Not Eligible"+"<br>");
+}
+        
+//5.Write a program to compare two strings using == and ===.  
+
+let name_1="Sheeba";
+let name_2="Jeeva";
+if(name_1==name_2)
+{
+   console.log("Equal")
+   document.write("Equal"+"<br>");
+}
+else{
+     console.log("Not Equal")
+   document.write("Not Equal"+"<br>");
+}
+
+let name_3="Sheeba";
+let name_4="Sheeba";
+if(name_3===name_4)
+{
+    console.log("Equal")
+   document.write("Equal"+"<br>");
+
+}
+else{
+     console.log("Not Equal")
+   document.write("Not Equal"+"<br>");
+}
+
+//6.Use && to check if a user has a valid email and password.  
+
+let user_name="shee@123";
+let password=12345;
+if(user_name==="shee@123" && password===12345)
+{
+    console.log("Valid user");
+    document.write("Valid user"+"<br>");
+}
+else {
+    console.log("Invalid.Try Again");
+        document.write("Invalid.Try Again"+"<br>");
+
+}
+
+//7.Write a program to update wallet balance using assignment operators.  
+
+let wallet=100;
+document.write("Current balance: ",wallet+"<br>");
+document.write("After updation..."+"<br>")
+let update_money=wallet+150;
+document.write("Current balance: ",update_money+"<br>");
+
+//8.Use a ternary operator to check if a product is available in stock.  
+
+let is_product_available=false;
+let output=(is_product_available)?"Available":"Not Available";
+console.log("Product ",output+"<br>");
+document.write("Product ",output+"<br>");
+
+//9.Create a simple "greater than" condition to compare two numbers.  
+let number=10;
+let number_2=30;
+if(number>number_2)
+{
+    console.log("a greater than b");
+    document.write("a greater than b"+"<br>")
+}
+else{
+    console.log("b greater than a");
+        document.write("b greater than a"+"<br>")
+
+}
+
+//10.Write a JavaScript program to apply discounts if a cart total exceeds $50.
+
+let total_amount=30;
+if(total_amount>50)
+{
+    console.log("Discount applicable");
+    document.write("Discount applicable"+"<br>");
+}
+else{
+    console.log("No discount");
+        document.write("No discount"+"<br>");
+
+}
+
+
+//11.Use || to allow login using email or phone number.
+let login_email=true;
+let login_phone=false;
+if(login_email||login_phone)
+{
+    console.log("Login successful");
+ 
+    document.write(   "Login successful"+"<br>")
+}
+else{
+    console.log("Login not successful");
+        document.write(   "Login not successful"+"<br>")
+
+}
+
+//12.Implement a "Buy 1 Get 1 Free" condition using if and &&.
+
+let product_count=1;
+let amount_total=1000;
+if(product_count==3 && amount_totol>=1000)
+{
+    cocnsole.log("Buy 1 Get 1 Option" );
+    document.write("Buy 1 Get 1 Option"+"<br>");
+}
+else{
+    console.log("Not eligible for Buy 1 GEt 1 Option");
+        document.write("Not eligible Buy 1 Get 1 Option"+"<br>");
+
+}
+
+//13.Check if a year is a leap year using the modulus operator.
+let year=2020;
+if((year%400==0 ) ||(year%4==0 &&year%100!=0))
+{
+    console.log(year," is a Leap year");
+    document.write(year," is a Leap year"+"<br>");
+}
+else{
+    console.log(year," is not a Leap year");
+    document.write(year," is not a Leap year"+"<br>");
+}
+
+//14.Use arithmetic operators to calculate the area of a rectangle.
+let length=10;
+let breadth=20;
+let area_rect=length*breadth;
+console.log("Area of the rectangle is : ",area_rect);
+document.write("Area of the rectangle is : ",area_rect+"<br>");
+
+//15.Check if a year is a leap year using logical and comparison operators.
+let given_year=2021;
+if((given_year%400==0 ) ||(given_year%4==0 &&given_year%100!=0))
+{
+    console.log(given_year," is a Leap year");
+    document.write(given_year," is a Leap year"+"<br>");
+}
+else{
+    console.log(given_year," is not a Leap year");
+    document.write(given_year," is not a Leap year"+"<br>");
+}
+
+    </script>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+
+<script>
+    //1.Write an if condition to check if a number is positive.  
+    document.write("<p>1.Write an if condition to check if a number is positive.  </p>");
+    let number=90;
+    if(number>0)
+    {
+        console.log("Positive");
+        document.writeln("Positive"+"<br>");
+    }
+    else{
+        console.log("Negative");
+        document.writeln("Negative"+"<br>");
+    }
+
+    //2.Use if-else to check if a person is an adult.  
+document.writeln("<p> 2.Use if-else to check if a person is an adult.</p>")
+let age=30;
+if(age<=18)
+{
+    console.log("Not adult");
+    document.write("Not adult"+"<br>");
+}
+else{
+    console.log("Adult");
+        document.write("Adult"+"<br>");
+
+}
+
+//3.Check if a number is even or odd using if-else.  
+document.writeln("<p>3.Check if a number is even or odd using if-else.</p>");
+let number_2=25;
+if(number_2%2==0)
+{
+     console.log(number_2,"  :Even number");
+    document.write(number_2,"  :Even number"+"<br>");
+}
+else{
+     console.log(number_2,"  :Odd number");
+    document.write(number_2,"  :Odd number"+"<br>");
+}
+
+//4.Use if-else if-else to check grade categories.  
+document.write("<p>4.Use if-else if-else to check grade categories.  </p>");
+let grade=60;
+if(grade>=90)
+{
+    console.log("Grade A");
+    document.writeln("Grade A"+"<br>");
+}
+else if(grade>=70)
+{
+    console.log("Grade B");
+    document.writeln("Grade B"+"<br>");
+}
+else if(grade>=35)
+{
+    console.log("Grade C");
+    document.writeln("Grade C"+"<br>");
+}
+else
+{
+    console.log("U");
+    document.writeln("U"+"<br>");
+}
+
+//5.Check if a person is eligible for a driver's license.  
+document.writeln("<p>5.Check if a person is eligible for a driver's license.  </p>");
+let is_passed_driving=true;
+let is_practiced=false;
+if(is_passed_driving && is_practiced)
+{
+    console.log("Not eligible for a driver license");
+    document.writeln("Not eligible for a driver license"+"<br>");
+}
+else{
+     console.log("Eligible for a driver license");
+    document.writeln("Eligible for a driver license"+"<br>");
+}
+
+//6.Create a nested if condition to check both login and admin status.
+document.writeln("<p>6.Create a nested if condition to check both login and admin status.</p>");
+let is_login=true;
+let is_admin=false;
+if(is_login)
+{
+    if(is_admin)
+    {
+        console.log("Welcome user");
+        document.write("Welcome user"+"<br>");
+    }
+    else{
+                console.log("Welcome Admin");
+                        document.write("Welcome Admin"+"<br>");
+
+
+    }
+}
+else
+{
+    console.log("Login again");
+        document.write("Login again"+"<br>");
+}
+
+//7.Use a switch statement to print messages for different days.  
+document.writeln("<p>7.Use a switch statement to print messages for different days.  </p>");
+let day="Monday";
+switch (day)
+{
+    case "Monday":
+    case "Tuesday":
+    case "Wednaesday":
+    case "Thursday": 
+    case "Friday": console.log("Working Day");        document.write("Wroking day"+"<br>");
+break;
+    case "Saturday":console.log("Half Working day");        document.write("Half Working day"+"<br>");
+break;
+    case "Sunday":console.log("Leave");        document.write("Leave"+"<br>");break;
+    default: console.log("Invalid ");        document.write("Invalid"+"<br>");
+
+
+}
+
+//8.Use a ternary operator to check if a person is eligible for a senior citizen discount.  
+document.writeln("<p>8.Use a ternary operator to check if a person is eligible for a senior citizen discount.  </p>");
+let person_age=55;
+let is_applicable=(person_age>=60)?"You are eligible for senior citizen discount":"You are'nt eligible for a  senior citizen discount";
+document.writeln(is_applicable+"<br>");
+console.log(is_applicable);
+
+//9.Check if a user is logged in using &&
+document.writeln("<p>9.Check if a user is logged in using &&</p>");
+let userid=1234;
+let is_loggedin=true;
+if(userid==1234 && is_loggedin)
+{
+    console.log("YOU ARE LOGGED IN");
+    document.write("YOU ARE LOGGED IN"+"<br>");
+}
+else{
+    console.log("YOU ARE LOGGED OUT");  
+      document.write("YOU ARE LOGGED OUT"+"<br>");
+
+
+}
+
+//10.Use || to check if a username or email is provided.  
+
+document.writeln("<p>10.Use || to check if a username or email is provided.  </p>");
+let is_email_provided=false;
+let is_username_provided=true;
+if(is_email_provided || is_username_provided)
+{
+    console.log("Information okay");
+     document.writeln("Information okay"+"<br>")   ;
+
+}
+else{
+    console.log("Give any one info");
+ document.writeln("Give any one info"+"<br>")  ; 
+}
+
+//11.Use ! to negate a boolean variable.  
+document.write("<p>11.Use ! to negate a boolean variable.  </p>");
+let is_raining=true;
+if(!is_raining)
+{
+    console.log("You have school");
+    document.writeln("You have school"+"<br>");
+}
+else{
+    console.log("You have leave");
+        document.writeln("You have leave"+"<br>");
+
+}
+
+//12.Check if the current year is a leap year.  
+
+document.writeln("<p>12.Check if the current year is a leap year.  </P>");
+    let current_year=2025;
+    if((current_year%400==0)||((current_year%4==0)&&(current_year%100!=0)))
+    {
+        console.log("Leap year");
+                document.writeln("Leap year"+"<br>");
+
+    }
+else{
+    console.log("Not a leap Year");
+            document.writeln("Not a Leap Year"+"<br>");
+
+}
+    //13.Validate a password length using an if statement.
+document.writeln("<P>13.Validate a password length using an if statement.</p>");
+    let password=123456;
+    if(password.length==6)
+    {
+        console.log("Validated Password");
+                document.writeln("Validated Password"+"<br>");
+
+    }
+    else{
+        console.log("Provide 6 characters for passowrd");
+                document.writeln("Provide 6 characters for passowrd"+"<br>");
+
+    }
+
+    //14.Check if a number is divisible by 3 and 5.
+document.writeln("<P>14.Check if a number is divisible by 3 and 5.</p>");
+    let given_number=15;
+    if(given_number%5==0 && given_number%3==0)
+    {
+        console.log("Number divisible by 3 and 5");
+        document.writeln("Number divisible by 3 and 5"+"<BR>");
+    }
+    else{
+        console.log("Number not divisible by 3 and 5");
+                document.writeln("Number not divisible by 3 and 5"+"<BR>");
+
+    }
+//15.Use nested if to check if a student passed and scored distinction (marks > 75).
+document.writeln("<P> 15.Use nested if to check if a student passed and scored distinction (marks > 75).</p>")
+    let marks = 82; 
+
+if (marks >= 40) {
+    console.log("Student Passed");  document.writeln("Student Passed"+"<BR>");
+
+   
+    if (marks > 75) {
+        console.log("Distinction");  document.writeln("Distinction"+"<BR>");
+    }
+} else {
+    console.log("Student Failed");  document.writeln("Student Failed"+"<BR>");
+}
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+</body>
+ <script>
+    // 1.Write a JavaScript program to display "Hello, JavaScript!" using console.log().   
+   document.writeln("<p> 1.Write a JavaScript program to display 'Hello, JavaScript!'using console.log().   </p>") ;
+
+    console.log("Hello, JavaScript!");
+    document.write("Hello, JavaScript!")
+   // 2.Create a variable using var, let, and const and print their values.  
+   document.writeln("<p>2.Create a variable using var, let, and const and print their values.  </p>") ;
+
+   var a=10;
+   let b="Sheeba";
+   const A=25;
+   document.write(a+"<br>"); 
+   document.write(b+"<br>");
+   document.write(A+"<br>");
+   console.log(A);
+   console.log(b);
+   console.log(a);
+   
+//4.Check the type of a variable using typeof for different data types.  
+document.writeln("<p>4.Check the type of a variable using typeof for different data types.  </p>") ;
+
+let n1=1;
+let n2=1.0;
+let n3='c';
+let n4="Sheeba";
+let n5=false;
+
+
+document.write(typeof n1+"<br>");
+document.write(typeof n2+"<br>");
+
+document.write(typeof n3+"<br>");
+
+document.write(typeof n4+"<br>");
+
+document.write(typeof n5+"<br>");
+console.log(typeof n1);
+console.log(typeof n2);
+
+console.log(typeof n3);
+console.log(typeof n4);
+console.log(typeof n5);
+
+//5.Create a user profile object containing name, age, and is Student properties.  
+document.writeln("<p>5.Create a user profile object containing name, age, and is Student properties.</p>") ;
+
+let user_profile={name:"Sheeba",age:22,isStudent:true};
+console.log(user_profile.name );
+console.log(user_profile.age);
+console.log(user_profile.isStudent);
+document.write(user_profile.name+"<br>");
+document.writeln(user_profile.age+"<br>");
+document.writeln(user_profile.isStudent+"<br>");
+//6.Store and display a list of favorite colors using an array.  
+document.writeln("<p>6.Store and display a list of favorite colors using an array.  </p>") ;
+
+let colors=["violet","indigo","blue","green","yellow","orange","red"];
+console.log(colors);
+document.write(colors+"<br>");
+//7.Perform type conversion: Convert a string "100" to a number and a number  100 to a string. 
+document.writeln("<p>7.Perform type conversion: Convert a string '100' to a number and a number  100 to a string.</p>") ;
+
+let my_num=100;
+let string_num=my_num.toString();
+let number=Number(string_num);
+console.log(number);
+console.log(string_num);
+document.write(string_num," -> ",typeof string_num+"<br>");
+document.write(number,"-> ",typeof number+"<br>");
+
+//8.Write a function that returns a Boolean value based on a condition.  
+document.writeln("<p>8.Write a function that returns a Boolean value based on a condition.</p>") ;
+
+function check(y)
+{
+     let result=(y>50)?true:false;
+     return result;
+}
+console.log(check(80));
+document.write(check(80)+"<br>");
+//9.Demonstrate null vs undefined by creating two different variables and checking their types.  
+document.writeln("<p>9.Demonstrate null vs undefined by creating two different variables and checking their types.</p>") ;
+
+let n6=undefined;
+let n7=null;
+console.log(typeof n6);
+console.log(typeof n7);
+document.writeln(typeof n6+"<br>");
+document.writeln(typeof n7+"<br>");
+
+//10.Use Symbol data type to create a unique ID and compare two symbols.  
+document.writeln("<p>10.Use Symbol data type to create a unique ID and compare two symbols.</p>") ;
+
+let id1=Symbol("userid");
+let id2=Symbol("userid");
+console.log(id1==id2);
+document.writeln(id1==id2 ,"<br>");
+
+//11.Use BigInt to store a large number and print its type using typeof.  
+document.writeln("<p>11.Use BigInt to store a large number and print its type using typeof</p>") ;
+
+let bigNumber = 1234567890123456789012345678901234567890n;
+
+console.log(bigNumber);            
+console.log(typeof bigNumber); 
+document.writeln(typeof
+bigNumber+"<br>");  
+
+//12.Write a function that accepts a number as an argument and returns "Even" or "Odd". 
+document.writeln("<p>Write a function that accepts a number as an argument and returns Even or Odd</p>") ;
+function num_check(value)
+{
+    let value_result=(value%2==0)?"Even":"Odd";
+    return value_result;
+}
+console.log(num_check(10));
+console.log(num_check(81));
+document.writeln(num_check(90)+"<br>");
+document.writeln(num_check(21)+"<br>");
+//13.Create a temperature conversion program that converts Celsius to Fahrenheit using a variable.
+document.writeln("<p>13.Create a temperature conversion program that converts Celsius to Fahrenheit using a variable.</p>");
+let f=77;
+let celcius=(f-32)*5/9;
+console.log(celcius);
+document.write("celcius: ",celcius+"<br>");
+
+let c=25;let fahrenheit=(c*9/5)+32;
+
+console.log(fahrenheit);
+document.write("Fahrenheit: ",fahrenheit);
+
+//3.Demonstrate the difference between var, let, and const in terms of scope.  
+
+document.writeln("<p>3.Demonstrate the difference between var, let, and const in terms of scope. </p>");
+function greet() {
+    var name = "hello";
+    let c = "12";
+    const age = 18;
+}
+
+console.log(name);
+console.log(c);
+console.log(age);
+  //it shows REFERENCE ERROR
+ </script>
+</html>
