@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //1.Create a function that prints "Hello, World!". 
+    document.writeln("<P>1.Create a function that prints 'Hello, World!'. .  </p>");
+ 
+    function print()
+{
+    document.write("Hello, World!");
+}
+print();
+document.writeln("<hR>");
+//2.Write a function that takes a number and returns its cube.  
+document.writeln("<P>2.Write a function that takes a number and returns its cube.  </p>");
+
+function print_cube ( number)
+{
+    let cube=number**3;
+    return cube;
+}
+document.write("the cube value is: ",print_cube(3));
+document.writeln("<hR>");
+
+
+//3.Write a function to check if a number is even or odd.  
+document.writeln("<P>3.Write a function to check if a number is even or odd.    </p>");
+
+function check_Even_Or_Odd(number)
+{
+    if(number%2==0)
+    {
+        document.writeln("Even"+"<BR>");
+    }
+    else
+    {
+                document.writeln("Odd"+"<BR>");
+
+    }
+}
+check_Even_Or_Odd(11);
+document.writeln("<hR>");
+
+//4.Write a function to find the factorial of a number. 
+document.writeln("<P>4.Write a function to find the factorial of a number.  </p>");
+
+function factorial(number)
+{
+    let num=1;
+    for(let i=1;i<=number;i++)
+    {
+        num*=i;
+    }
+    document.writeln("the factorial is: ",num);
+
+}
+factorial(5);
+document.writeln("<hR>");
+
+//5.Create a function to return the sum of two numbers.  
+document.writeln("<P>5.Create a function to return the sum of two numbers.   </p>");
+
+let add=function(a,b)
+    {
+        return a+b;
+    };
+let result=add(10,15);
+document.writeln("sum: ",result);
+document.writeln("<hR>");
+
+//6.Write a function that returns the largest of three numbers. 
+document.writeln("<P>6.Write a function that returns the largest of three numbers.   </p>");
+
+let largest=function(a,b,c)
+{
+    if((a>b) &&(a>c))
+    {
+        return("a is greater");
+    }
+    else if((b>a) && (c>a))
+    {
+        return("b is greater");
+    }
+    else
+    {
+        return("c is greater");
+    }
+
+};
+let result_1=largest(10,3,80);
+document.writeln("largest value is: ",result_1);
+document.writeln("<hR>");
+
+//7.Write a function that checks if a string is a palindrome.  
+document.writeln("<P>7.Write a function that checks if a string is a palindrome.   </p>");
+
+let name="malayalam";
+let name_reverse="";
+for(let i=name.length-1;i>=0;i--)
+{
+    name_reverse+=name[i];
+}
+if(name_reverse==name)
+{
+    document.writeln("Palindrome");
+}
+else{
+    document.writeln("Not a Palindrome");
+}
+document.writeln("<hR>");
+
+//8.Create a function to convert Celsius to Fahrenheit. 
+document.writeln("<P>8.Create a function to convert Celsius to Fahrenheit.   </p>");
+
+
+let fahrenheit_converter=function (temperature)
+{
+    let f=(temperature*9/5)+32;
+    return f;
+};
+let result_2=fahrenheit_converter(30);
+document.writeln("fahrenheit: ",result_2);
+document.writeln("<hR>");
+
+//9.Write a function to calculate the simple interest.  
+document.writeln("<P>9.Write a function to calculate the simple interest.   </p>");
+
+let interest=function(p,r,t)
+{
+    let simple_interest=(p*r*t)/100;
+    return simple_interest;
+}
+let result_3=interest(1000,5,2);
+document.writeln("simple interest: ",result_3);
+document.writeln("<hR>");
+
+//10.Create a function that reverses an array.  
+document.writeln("<P>10.Create a function that reverses an array.  </p>");
+
+let array=[10,20,30,40,50];
+let array_2=[];
+let j=0;
+for(let i=array.length-1;i>=0;i--)
+{
+    array_2[j]=array[i];
+    j++;
+}
+document.writeln("given array:  ",array);
+
+document.writeln("reversed array:  ",array_2);
+document.writeln("<hR>");
+
+//11.Write a function that counts the number of vowels in a string.  
+document.writeln("<P>11.Write a function that counts the number of vowels in a string</p>");
+let word="apple";
+word.toLowerCase();
+let count=0;
+for(let i of word)
+{
+    if(i=="a"||i=="e"||i=="o"||i=="u"||i=="i")
+    {
+        count++;
+    }
+}
+document.write("Vowel count: ",count);
+document.writeln("<hR>");
+
+//12.Write an arrow function that doubles each number in an array.  
+document.writeln("<P>12.Write an arrow function that doubles each number in an array.  </p>");
+
+let array_3=[10,30,20,40,50];
+
+let double_array=()=>{
+    for(let i=0;i<array_3.length;i++)
+    {
+        array_3[i]=array_3[i]*2;
+    }
+    document.write(array_3);
+}
+double_array();
+document.writeln("<hR>");
+
+//13.Create a function that takes a callback and calls it.
+document.writeln("<P>13.Create a function that takes a callback and calls it.</p>");
+
+function doSomething(callback)
+{
+    callback();
+}
+function sayHello()
+{
+    document.writeln("Hello");
+}
+doSomething(sayHello);
+document.writeln("<hR>");
+
+
+//14.Create a function to find the maximum of three numbers
+document.writeln("<P>14.Create a function to find the maximum of three numbers</p>");
+
+let maximum_of_three=function(a,b,c)
+{
+    if((a>b)&&(a>c))
+    {
+        return a;
+    }
+    else if((b>a)&&(b>c))
+    {
+        return b;
+    }
+    else{
+        return c;
+    }
+
+};
+document.write(maximum_of_three(10,3,55));
+document.writeln("<hR>");
+
+//15.Write a function that checks if a string is a palindrome
+document.writeln("<P>15.Write a function that checks if a string is a palindrome</p>");
+let empty_string="";
+
+let is_palindrome=function(name)
+{
+    for(let i=name.length-1;i>=0;i--)
+    {
+        empty_string+=name[i];
+    }
+    return empty_string;
+};
+let result_4=is_palindrome("malayalam");
+if(empty_string==result_4)
+{
+    document.writeln("Palindrome");
+}
+else{
+    document.writeln("Not a palindrome");
+}
+document.writeln("<hR>");
+
+//16.Create a function to calculate the area of a circle
+document.writeln("<P>16.Create a function to calculate the area of a circle</p>");
+let area_circle=( r)=>{
+        document.write(r**2);
+};
+area_circle(4);
+document.writeln("<hR>");
+
+//17.Write a function that capitalizes the first letter of each word in a sentence
+document.writeln("<P>17.Write a function that capitalizes the first letter of each word in a sentence</p>");
+let given_sentence="hello world! from javascript";
+let words=given_sentence.split(" ");
+let capitalize=words.map(function(words){
+    return words[0].toUpperCase()+words.slice(1);
+});
+document.writeln(capitalize.join(" "));
+document.writeln("<hR>");
+
+//18.Create a function that returns the reverse of a string
+document.writeln("<P>18.Create a function that returns the reverse of a string</p>");
+function reverse_string(the_name)
+{
+    let empty="";
+    for(let i=the_name.length-1;i>=0;i--)
+    {
+        empty+=the_name[i];
+    
+    }    return empty;
+}
+document.writeln(reverse_string("computer"));
+document.writeln("<hR>");
+
+
+//19.Create a function that counts vowels and consonants in a string
+document.writeln("<P>19.Create a function that counts vowels and consonants in a string</p>");
+let given_name="laptop";
+given_name.toLowerCase();
+let consonant_count=0;
+let vowel_count=0;
+for(let i of given_name)
+{
+
+    if(i=="a"||i=="e"||i=="i"||i=="o"||i=="u")
+    {
+        vowel_count+=1;
+    }
+    else{
+        consonant_count+=1;
+    }
+}
+document.writeln("vowel count: ",vowel_count);
+document.writeln("consonant count: ",consonant_count);
+
+document.writeln("<hR>");
+
+//20.Write a function to check if a number is prime or not -->
+document.writeln("<P>20.Write a function to check if a number is prime or not </p>");
+let given_number=11;
+let isPrime=true;
+for(let i=2;i<=given_number/2;i++)
+{
+    if(given_number%i==0)
+    {
+        isPrime=false;
+        break;
+    }
+    
+}
+if(isPrime)
+{
+document.writeln("It is a prime number");
+
+}
+else{
+            document.writeln("Not a prime number");
+
+}
+
+</script>
+</body>
+</html>
