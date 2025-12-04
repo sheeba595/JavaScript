@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1.Convert "javascript" to uppercase.  
+2.Convert "HELLO WORLD" to lowercase.  
+3.Extract "Script" from "JavaScript" using slice().  
+4.Replace "bad" with "good" in "This is a bad day"
+5.Check if "Coding" is present in "I love Coding!".  
+6.Find the position of "world" in "Hello world!".  
+7.Remove spaces from " Trim me ".  
+8.Count the number of characters in "Programming".  
+9.Check if "apple" starts with "a".  
+10.Split "banana,apple,orange" into an array.  
+11.Repeat "JS " three times.  
+12.Concatenate "Web" and " Development".  
+13.Validate if "user123" has at least 5 characters.
+14.Check if a string starts with a specific substring using .startsWith()
+15.Check if a string ends with a specific substring using .endsWith()
+16.Use .includes() to check for a word in a sentence
+17.Convert a full name to initials (e.g., "John Doe" → "J.D.")
+18.Count how many times a letter appears in a string
+19.Find the longest word in a sentence
+20.Capitalize the first letter of each word in a sentence
+
+ -->
+
+</body>
+<script>
+ document.write("1. Convert 'javascript' to uppercase.<br><br>");
+let word="javascript";
+document.write(word.toUpperCase());
+
+document.write("2. Convert 'HELLO WORLD' to lowercase.<br><br>");
+let gn_word="HELLO WORLD";
+document.writeln(gn_word.toLowerCase());
+document.write("3. Extract 'Script' from 'JavaScript' using slice().<br><br>");
+let name="JavaScript";
+document.write(name.slice(4));
+
+document.write("4. Replace 'bad' with 'good' in 'This is a bad day'.<br><br>");
+let sentence="This is a bad day";
+document.write(sentence.replace("bad","good"));
+document.write("5. Check if 'Coding' is present in 'I love Coding!'.<br><br>");
+let s1="I love Coding";
+document.writeln(s1.includes("Coding"));
+document.write("6. Find the position of 'world' in 'Hello world!'.<br><br>");
+let s2="Hello world";
+document.writeln(s2.indexof("world"));
+document.write("7. Remove spaces from ' Trim me '.<br><br>");
+let s3="       Sheeba     ";
+document.writeln(s3.trim());
+document.write("8. Count the number of characters in 'Programming'.<br><br>");
+let s4="Programming";
+document.write(s4.length);
+document.write("9. Check if 'apple' starts with 'a'.<br><br>");
+let s5="apple";
+document.write(s5.startsWith("a"));
+document.write("10. Split 'banana,apple,orange' into an array.<br><br>");
+document.write("11. Repeat 'JS ' three times.<br><br>");
+document.write("12. Concatenate 'Web' and ' Development'.<br><br>");
+document.write("13. Validate if 'user123' has at least 5 characters.<br><br>");
+document.write("14. Check if a string starts with a specific substring using .startsWith().<br><br>");
+document.write("15. Check if a string ends with a specific substring using .endsWith().<br><br>");
+document.write("16. Use .includes() to check for a word in a sentence.<br><br>");
+document.write("17. Convert a full name to initials (e.g., 'John Doe' → 'J.D.').<br><br>");
+document.write("18. Count how many times a letter appears in a string.<br><br>");
+document.write("19. Find the longest word in a sentence.<br><br>");
+document.write("20. Capitalize the first letter of each word in a sentence.<br><br>");
+
+</script>
+</html>
