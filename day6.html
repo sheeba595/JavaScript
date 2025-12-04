@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1.Create an array of 5 student names.  
+2.Add a new student name to the array using push().  
+4.Use map() to convert all names to uppercase.  
+5.Use filter() to get students whose names start with "A".  
+6.Use forEach() to print each student name.  
+7.Create an object for a book with properties (title, author, price).  
+8.Use Object.keys() to get all book properties.  
+9.Use Object.values() to get all book values.  
+10.Add a new property genre to the book object.  
+13.Convert the book object into an array of key-value pairs using  Object.entries().
+14.Create an array of 10 numbers and print only the odd numbers using filter()
+15.Sort an array of student scores in descending order using sort()  -->
+
+<script>
+    //1.Create an array of 5 student names.  
+    document.write("1.Create an array of 5 student names.");
+    let student_name=["Sheeba","Jeeva","Edwin","Jefneesh","Ajay","Peter"];
+document.writeln("Student array: ",student_name);
+    document.writeln("<HR>");
+
+//2.Add a new student name to the array using push().  
+document.writeln("2.Add a new student name to the array using push().  ");
+student_name.push("Moses");
+document.writeln("Student array after adding: ",student_name);
+    document.writeln("<HR>");
+
+//3.Remove the last student using pop().  
+document.writeln("3.Remove the last student using pop().  ");
+student_name.pop();
+document.writeln("Student array after removing: ",student_name);
+    document.writeln("<HR>");
+
+//4.Use map() to convert all names to uppercase.  
+document.writeln("4.Use map() to convert all names to uppercase.  ");
+let upper=student_name.map(function(name)
+{
+   return  name.toUpperCase();
+});
+document.writeln("Student array after uppercase: ",upper);
+    document.writeln("<HR>");
+
+//5.Use filter() to get students whose names start with "A".  
+document.writeln("5.Use filter() to get students whose names start with A");
+let start=student_name.filter(function(name)
+{
+    return name[0]=="A";
+});
+document.write("Student name start with A: ",start);
+    document.writeln("<HR>");
+
+//6.Use forEach() to print each student name.  
+document.writeln("6.Use forEach() to print each student name.  ")
+for(let name of student_name)
+{
+    document.writeln(name+"<br>");
+}
+    document.writeln("<HR>");
+
+//7.Create an object for a book with properties (title, author, price).  
+document.writeln("7.Create an object for a book with properties (title, author, price).  ");
+let book={title:"Game of Thrones",author:"ABC",price:280};;
+console.log("book: ",book);
+    document.writeln("output in console");
+    document.writeln("<HR>");
+
+//8.Use Object.keys() to get all book properties.  
+document.writeln("8.Use Object.keys() to get all book properties.  ");
+console.log("keys: ",Object.keys(book));
+    document.writeln("output in console");
+    document.writeln("<HR>");
+
+//9.Use Object.values() to get all book values.  
+document.writeln("9.Use Object.values() to get all book values.  ");
+console.log("values: ",Object.values(book));
+    document.writeln("output in console");
+    document.writeln("<HR>");
+
+//10.Add a new property genre to the book object.  
+document.writeln("10.Add a new property genre to the book object.  ");
+console.log("after adding: ",Object.assign(book,{year:2021}));
+    document.writeln("output in console");
+    document.writeln("<HR>");
+
+//11.Use delete to remove price from the book.
+document.write("11.Use delete to remove price from the book.");
+console.log(delete book.price);
+console.log("after deletion: ",book);
+    document.writeln("output in console");
+
+    document.writeln("<HR>");
+
+//12.Merge a publisher object into the book object.  
+document.writeln("12.Merge a publisher object into the book object. ");
+let publisher={publisher:"Gopal"};
+let updated=Object.assign(publisher,book);
+console.log("merged array: ",updated);
+    document.writeln("output in console");
+    document.writeln("<HR>");
+
+//13.Convert the book object into an array of key-value pairs using  Object.entries().
+document.writeln("13.Convert the book object into an array of key-value pairs using  Object.entries().");
+let book_array=Object.entries(book);
+console.log("Book array: ",book_array);
+    document.writeln("output in console");
+    document.writeln("<HR>");
+
+//14.Create an array of 10 numbers and print only the odd numbers using filter()
+document.writeln("//14.Create an array of 10 numbers and print only the odd numbers using filter()");
+let number_array=[1,2,3,4,5,6,7,8,9,10];
+let odd=number_array.filter(function(num)
+{
+    return num%2!=0;
+});
+
+document.write("odd numbers: ",odd);
+
+    document.writeln("<HR>");
+
+//15.Sort an array of student scores in descending order using sort()  -->
+    document.writeln("15.Sort an array of student scores in descending order using sort()");
+
+let scores = [85, 92, 75, 60, 99, 88];
+scores.sort(function(a, b) {
+    return b - a;   
+});
+
+document.writeln(scores);
+
+
+
+</script>
+</body>
+</html>
