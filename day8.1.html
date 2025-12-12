@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 17.Implement a simple click counter using LocalStorage.  
+ -->
+    <h2>Click Counter</h2>
+<p>Number of clicks: <span id="clickCount">0</span></p>
+<button id="clickBtn">Click Me!</button>
+<button id="resetBtn">Reset</button>
+<!-- 18.Save and retrieve a to-do list using LocalStorage with JSON.  
+ -->
+
+<h2>My To-Do List</h2>
+<input type="text" id="taskInput" placeholder="Enter new task">
+<button id="addTaskBtn">Add Task</button>
+
+<ul id="taskList"></ul>
+
+<!-- --------------------------------------------------------------- -->
+<script>
+    //17.Implement a simple click counter using LocalStorage
+    document.write("17.Implement a simple click counter using LocalStorage.  ");
+ const clickCountEl = document.getElementById('clickCount');
+const clickBtn = document.getElementById('clickBtn');
+const resetBtn = document.getElementById('resetBtn');
+
+ let count = parseInt(localStorage.getItem('clickCount')) || 0;
+
+ clickCountEl.textContent = count;
+
+ clickBtn.addEventListener('click', () => {
+    count += 1;
+    localStorage.setItem('clickCount', count);
+    clickCountEl.textContent = count;
+});
+
+ resetBtn.addEventListener('click', () => {
+    count = 0;
+    localStorage.setItem('clickCount', count);
+    clickCountEl.textContent = count;
+});
+//------------------------------------------------------------_------------------------
+document.writeln("18.Save and retrieve a to-do list using LocalStorage with JSON.  ");
+//18.Save and retrieve a to-do list using LocalStorage with JSON.  
+
+const taskInput = document.getElementById('taskInput');
+const addTaskBtn = document.getElementById('addTaskBtn');
+const taskList = document.getElementById('taskList');
+
+ let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+ function renderTasks() {
+    taskList.innerHTML = '';  
+    tasks.forEach((task, index) => {
+        const li = document.createElement('li');
+
+        const taskText = document.createElement('span');
+        taskText.textContent = task.name;
+        if(task.completed) taskText.classList.add('completed');
+
+         taskText.addEventListener('click', () => {
+            task.completed = !task.completed;
+            saveAndRender();
+        });
+
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = 'Delete';
+        removeBtn.addEventListener('click', () => {
+            tasks.splice(index, 1);
+            saveAndRender();
+        });
+
+        li.appendChild(taskText);
+        li.appendChild(removeBtn);
+        taskList.appendChild(li);
+    });
+}
+
+ function saveAndRender() {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    renderTasks();
+}
+
+ addTaskBtn.addEventListener('click', () => {
+    const taskName = taskInput.value.trim();
+    if (taskName !== '') {
+        tasks.push({ name: taskName, completed: false });
+        saveAndRender();
+        taskInput.value = '';
+    }
+});
+
+ renderTasks();
+//-------------------------------------------------------------------------------------
+document.write("<p>19.Convert a JavaScript object to a JSON string using JSON.stringify() and store it. </p>");
+//19.Convert a JavaScript object to a JSON string using JSON.stringify() and store it.  
+
+const user = {
+    name: "Sheeba",
+    age: 25,
+    email: "sheeba@example.com",
+    skills: ["JavaScript", "HTML", "CSS"]
+};
+
+ const user_JSON = JSON.stringify(user);
+
+ localStorage.setItem("user", user_JSON);
+
+ const retrievedUser = localStorage.getItem("user");
+console.log("Stored JSON string:", retrievedUser);
+
+ const user_Object = JSON.parse(retrievedUser);
+console.log("Converted back to object:", user_Object);
+//-------------------------------------------------------------------------------------
+//20.Convert a JSON string back to a JavaScript object using JSON.parse() and use it.
+
+document.write("<P>20.Convert a JSON string back to a JavaScript object using JSON.parse() and use it.</p>");
+ const userJSON = '{"name":"Sheeba","age":25,"email":"sheeba@example.com","skills":["JavaScript","HTML","CSS"]}';
+
+ const userObj = JSON.parse(userJSON);
+
+ console.log("Name:", userObj.name);           
+console.log("Age:", userObj.age);             
+console.log("Email:", userObj.email);         
+console.log("Skills:", userObj.skills.join(", "));  
+
+ document.body.innerHTML = `
+    <h2>User Info</h2>
+    <p>Name: ${userObj.name}</p>
+    <p>Age: ${userObj.age}</p>
+    <p>Email: ${userObj.email}</p>
+    <p>Skills: ${userObj.skills.join(", ")}</p>
+`;
+
+</script>
+</body>
+</html>

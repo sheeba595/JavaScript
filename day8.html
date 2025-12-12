@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body.light-mode{
+        background-color: white;
+        color:black;
+    }
+    body.dark-mode
+    {
+        background-color: black;
+        color: white;
+    }
+</style>
+<body>
+    <!-- 1.Change the background color of the page using a button click.  
+2.Change the text of a paragraph using a button.  
+3.Hide and show an element using a toggle button.  
+4.Create a new list item dynamically.  
+5.Remove a specific item from a list.  
+6.Change the font size of a paragraph when a button is clicked.  
+7.Change the text color of all paragraphs using querySelectorAll().
+8.Add a border to an image when hovered.  
+9.Display an alert message when a button is clicked.  
+10.Toggle between two different text contents.  
+11.Store and retrieve a username using LocalStorage.  
+12.Save and load dark/light mode settings using LocalStorage.  
+13.Implement a shopping cart that remembers selected items using  LocalStorage.  
+14.Store and retrieve session-based login status using SessionStorage.
+15.Save form input values temporarily in SessionStorage and restore on page reload.  
+16.Store last visited page in LocalStorage and display it on the next visit.  
+17.Implement a simple click counter using LocalStorage.  
+18.Save and retrieve a to-do list using LocalStorage with JSON.  
+19.Convert a JavaScript object to a JSON string using JSON.stringify() and store it.  
+20.Convert a JSON string back to a JavaScript object using JSON.parse() and use it.
+ -->
+<!-- 1.Change the background color of the page using a button click.  -->
+ <p>1.Change the background color of the page using a button click. </p>
+ <button onclick="changeBackground()">Change Background</button>
+ <p id="id">
+   Hello World!!
+ </p>
+ <!-- 2.Change the text of a paragraph using a button.  
+ -->
+<p>2.Change the text of a paragraph using a button.  
+</p>
+ <button onclick="changeParagraph()">Change Paragraph</button>
+ <!-- 3.Hide and show an element using a toggle button.  
+ -->
+ <p>3.Hide and show an element using a toggle button.  
+</p>
+ <button onclick="toggle()">Toggle Button</button>
+ <div class="toggle">
+    <p>I will either Hide / be showned.</p>
+ </div>
+<!-- 4.Create a new list item dynamically.  
+ -->
+<p>4.Create a new list item dynamically.  
+</p>
+ <button onclick="addItem()">Add Item</button>
+ <!-- 5.Remove a specific item from a list.   -->
+  <p>5.Remove a specific item from a list.  
+</p>
+ <button onclick="removeItem()">Remove Item</button>
+
+ <ul id="list">
+    <p>Add your list here</p>
+ </ul>
+ <!-- 6.Change the font size of a paragraph when a button is clicked.   -->
+  <p>6.Change the font size of a paragraph when a button is clicked.  
+</p>
+<p id="para">Haii!!</p>
+ <button onclick="changeFont()">Change Font Size</button>
+ <!-- 7.Change the text color of all paragraphs using querySelectorAll(). -->
+  <p>7.Change the text color of all paragraphs using querySelectorAll().
+</p>
+ <button onclick="changeParaColor()">Change Para Color</button>
+ <hr>
+ <!-- 8.Add a border to an image when hovered.   -->
+  <p>8.Add a border to an image when hovered.  
+</p>
+ <img src="data:image/png;base64,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" alt="image" id="image" loading="lazy">
+ <button onclick="addBorder()">Add Border</button>
+ <!-- 9.Display an alert message when a button is clicked.   -->
+  <p>9.Display an alert message when a button is clicked.  
+</p>
+ <button onclick="alertMsg()">Click Me!!</button>
+ <!-- 10.Toggle between two different text contents.   -->
+  <p>10.Toggle between two different text contents.  
+</p>
+ <button onclick="toggleText()">Toggle Text</button>
+ 
+ <p id="word">
+    Hey There!!
+ </p>
+<!-- 12.Save and load dark/light mode settings using LocalStorage.   -->
+ <p>12.Save and load dark/light mode settings using LocalStorage.  
+</p>
+ <button id="toggle" onclick="themeChange()">Light / Dark Theme</button>
+
+ <!-- 13.Implement a shopping cart that remembers selected items using  LocalStorage.  -->
+  <p>13.Implement a shopping cart that remembers selected items using  LocalStorage.  
+</p>
+ <div class="product" data-id="1" data-name="Laptop" data-price="50000">
+    Laptop - ₹50,000
+    <button class="addBtn">Add to Cart</button>
+</div>
+
+<div class="product" data-id="2" data-name="Phone" data-price="20000">
+    Phone - ₹20,000
+    <button class="addBtn">Add to Cart</button>
+</div>
+
+<h2>Shopping Cart</h2>
+<ul id="cartItems"></ul>
+<p>Total: ₹<span id="total">0</span></p>
+<button id="clearCart">Clear Cart</button>
+<hr>
+
+<!-- 14.Store and retrieve session-based login status using SessionStorage. -->
+ <p>14.Store and retrieve session-based login status using SessionStorage.
+</p>
+<div id="loginForm">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button id="loginBtn">Login</button>
+</div>
+
+
+<div id="welcome" class="hidden">
+    <h2>Welcome, <span id="userNameDisplay"></span>!</h2>
+    <button id="logoutBtn">Logout</button>
+</div>
+<!-- 15.Save form input values temporarily in SessionStorage and restore on page reload.   -->
+ <p>15.Save form input values temporarily in SessionStorage and restore on page reload.  
+</p>
+<h2>Feedback Form</h2>
+<form id="feedbackForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="message" placeholder="Your Message" rows="4" style="width:300px;"></textarea>
+    <button type="submit">Submit</button>
+</form>
+
+<!-- 16.Store last visited page in LocalStorage and display it on the next visit.   -->
+ <p>16.Store last visited page in LocalStorage and display it on the next visit.  
+</p>
+<h2>Welcome to My Website</h2>
+<p id="message"></p>
+
+
+<script>
+// 16.Store last visited page in LocalStorage and display it on the next visit.
+let path = window.location.pathname;
+let currentPage = path.split("/").pop();
+
+let lastVisited = localStorage.getItem("lastPage");
+
+ if (lastVisited) {
+    document.getElementById("message").innerText =
+        "Last time you visited: " + lastVisited;
+} else {
+    document.getElementById("message").innerText =
+        "Welcome! This is your first visit.";
+}
+
+ localStorage.setItem("lastPage", currentPage);
+
+//---------------------------------------------------------------------------------------------------------------
+
+//15.Save form input values temporarily in SessionStorage and restore on page reload.  
+
+ const form = document.getElementById('feedbackForm');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const messageInput = document.getElementById('message');
+
+ window.addEventListener('load', () => {
+    if (sessionStorage.getItem('name')) nameInput.value = sessionStorage.getItem('name');
+    if (sessionStorage.getItem('email')) emailInput.value = sessionStorage.getItem('email');
+    if (sessionStorage.getItem('message')) messageInput.value = sessionStorage.getItem('message');
+});
+
+ [nameInput, emailInput, messageInput].forEach(input => {
+    input.addEventListener('input', () => {
+        sessionStorage.setItem('name', nameInput.value);
+        sessionStorage.setItem('email', emailInput.value);
+        sessionStorage.setItem('message', messageInput.value);
+    });
+});
+
+ form.addEventListener('submit', (e) => {
+    e.preventDefault(); 
+    alert('Form submitted!');
+    sessionStorage.removeItem('name');
+    sessionStorage.removeItem('email');
+    sessionStorage.removeItem('message');
+    form.reset();
+});
+//--------------------------------------------------------------------------------------------------------
+
+//14.Store and retrieve session-based login status using SessionStorage.
+
+ const loginForm = document.getElementById('loginForm');
+const welcomeDiv = document.getElementById('welcome');
+const loginBtn = document.getElementById('loginBtn');
+const logoutBtn = document.getElementById('logoutBtn');
+const userNameDisplay = document.getElementById('userNameDisplay');
+
+ if (sessionStorage.getItem('loggedIn') === 'true') {
+    showWelcome(sessionStorage.getItem('username'));
+}
+
+ loginBtn.addEventListener('click', () => {
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+     if (username && password) {
+         sessionStorage.setItem('loggedIn', 'true');
+        sessionStorage.setItem('username', username);
+
+        showWelcome(username);
+    } else {
+        alert('Please enter username and password');
+    }
+});
+
+ logoutBtn.addEventListener('click', () => {
+    sessionStorage.clear(); // clear all session data
+    loginForm.classList.remove('hidden');
+    welcomeDiv.classList.add('hidden');
+});
+
+ function showWelcome(username) {
+    loginForm.classList.add('hidden');
+    welcomeDiv.classList.remove('hidden');
+    userNameDisplay.textContent = username;
+}
+//------------------------------------------------------------------------------------------------------------
+
+//13.Implement a shopping cart that remembers selected items using  LocalStorage.  
+
+ let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+ function renderCart() {
+    const cartItems = document.getElementById('cartItems');
+    const totalEl = document.getElementById('total');
+
+    cartItems.innerHTML = '';
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - ₹${item.price} x ${item.quantity}`;
+
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = 'Remove';
+        removeBtn.style.marginLeft = '10px';
+
+         removeBtn.addEventListener('click', () => {
+            cart.splice(index, 1);                 // Remove item
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();                         
+        });
+
+        li.appendChild(removeBtn);
+        cartItems.appendChild(li);
+
+        total += item.price * item.quantity;
+    });
+
+    totalEl.textContent = total;
+}
+
+ function addToCart(product) {
+    const existingItem = cart.find(item => item.id === product.id);
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({...product, quantity: 1});
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+}
+
+ function clearCart() {
+    cart = [];
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+}
+
+ document.querySelectorAll('.addBtn').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const productEl = e.target.closest('.product');
+        const product = {
+            id: productEl.dataset.id,
+            name: productEl.dataset.name,
+            price: parseFloat(productEl.dataset.price)
+        };
+        addToCart(product);
+    });
+});
+
+ document.getElementById('clearCart').addEventListener('click', clearCart);
+
+ renderCart();
+//------------------------------------------------------------------------------------------------------------
+//1.Change the background color of the page using a button click.  
+    function changeBackground()
+    {
+        document.body.style.backgroundColor="red";
+    }
+//----------------------------------------------------------------------------------------------------------------
+  
+//12.Save and load dark/light mode settings using LocalStorage.  
+
+function themeChange(){
+        let body=document.body;
+        let toggle_button=document.getElementById("toggle");
+
+        let saved_mode=localStorage.getItem("theme");
+        if(saved_mode)
+        {
+            body.classList.add(saved_mode);
+        }
+        else
+        {
+            body.classList.add("light-mode");
+        }
+        toggle_button.addEventListener("click",()=>{
+            if(body.classList.contains("light-mode"))
+            {
+                body.classList.replace("light-mode","dark-mode");
+                localStorage.setItem("theme","dark-mode");
+            }
+            else
+            {
+                 body.classList.replace("dark-mode","light-mode");
+                localStorage.setItem("theme","light-mode");
+            }
+            
+        })
+    }
+ //------------------------------------------------------------------------------------------------------------
+
+ //10.Toggle between two different text contents.  
+
+    function toggleText()
+    {
+        let point=document.getElementById("word");
+        if(point.textContent==="Hey There!!")
+        {
+            point.textContent="How Are You?";
+        }
+        else{
+            point.textContent="Hey There!!";
+        }
+    }
+//------------------------------------------------------------------------------------------------------------
+
+//9.Display an alert message when a button is clicked.  
+
+    function alertMsg()
+    {
+        alert("Button Clicked!");
+    }
+//------------------------------------------------------------------------------------------------------------
+
+//8.Add a border to an image when hovered.  
+
+    function addBorder()
+    {
+        document.getElementById("image").style.border="1px solid black";
+    }
+//------------------------------------------------------------------------------------------------------------
+//2.Change the text of a paragraph using a button.  
+
+    function changeParagraph()
+    {
+    document.getElementById("id").textContent="Hello JavaScript!!";
+
+    }
+//------------------------------------------------------------------------------------------------------------
+
+//7.Change the text color of all paragraphs using querySelectorAll().
+
+    function changeParaColor()
+    {
+        let para=document.querySelectorAll("p");
+        for(let p of para)
+        {
+            p.style.color="green";
+        }
+    }
+//------------------------------------------------------------------------------------------------------------
+//6.Change the font size of a paragraph when a button is clicked.  
+
+    function changeFont()
+    {
+            document.getElementById("para").style.fontSize="30px";
+    }
+//------------------------------------------------------------------------------------------------------------
+//3.Hide and show an element using a toggle button.  
+
+    function toggle()
+    {
+        let element=document.getElementsByClassName("toggle")[0];
+        if (element.style.display==="block")
+        {
+           element.style.display="none";
+        }
+        else
+        {
+                       element.style.display="block";
+
+        }
+    }
+//------------------------------------------------------------------------------------------------------------
+
+
+//4.Create a new list item dynamically.  
+//5.Remove a specific item from a list.  
+function addItem()
+{
+    let new_item=document.createElement("li");
+    new_item.textContent="New Item added";
+    document.getElementById("list").appendChild(new_item);
+}
+function removeItem(){
+    let list=document.getElementById("list");
+    if(list.lastElementChild)
+    {
+        list.lastElementChild.remove();
+    }
+}
+//------------------------------------------------------------------------------------------------------------
+//11.Store and retrieve a username using LocalStorage.  
+
+localStorage.setItem("name","Sheeba");
+localStorage.setItem("age",21);
+
+let username=localStorage.getItem("name");
+console.log(username);
+//------------------------------------------------------------------------------------------------------------
+ const lastVisitMsg = document.getElementById('lastVisitMsg');
+
+ const lastPage = localStorage.getItem('lastPage');
+
+if (lastPage) {
+    lastVisitMsg.textContent = `Your last visited page was: ${lastPage}`;
+} else {
+    lastVisitMsg.textContent = `This is your first visit!`;
+}
+
+ localStorage.setItem('lastPage', window.location.href);
+
+ </script>
+</body>
+</html>
