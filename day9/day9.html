@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+#loader {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #ddd;          
+    border-top: 6px solid #3498db;   
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ @keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+#content {
+    display: none;
+}
+
+
+</style>
+<body>
+    <!-- 1.Change the text of a button when clicked.  
+2.Show an alert when the mouse enters a specific area.  
+3.Detect when the user presses the "Enter" key.  
+4.Change the background color of a page when a button is clicked.  
+5.Toggle a password field between text and password.
+6.Display the coordinates of the mouse pointer when moved.  
+7.Prevent the default behavior of a form submission.  
+8.Count the number of times a button is clicked.  
+9.Create a button that disappears when clicked.  
+10.Toggle an element's visibility when another element is clicked.  
+11.Play a sound when a button is clicked.  
+12.Display a loading animation when the page is loading.  
+13.Change an image when a button is clicked.
+14.Handle double-click on a button to change background color.
+15.Detect when the user presses the Enter key in an input field.
+16.Display a message when the mouse enters and leaves a box.
+17.Create a keylogger that prints every key pressed on the keyboard.
+18.Show an alert when the user right-clicks anywhere on the page.
+19.Disable a form submission using event.preventDefault().
+20.Create a form that validates input only when a field loses focus (blur). -->
+
+<p>1.Change the text of a button when clicked.  </p>
+<button id="myBtn">Click Me</button>
+<hr>
+
+<p>2.Show an alert when the mouse enters a specific area.  </p>
+
+<div id="area" style="width:200px; height:100px; background:lightblue; padding:20px;">
+    Hover your mouse here
+</div>
+
+<p>3.Detect when the user presses the "Enter" key.  </p>
+
+<p>4.Change the background color of a page when a button is clicked.  </p>
+<button id="changeBtn">Change Background</button>
+
+<p>5.Toggle a password field between text and password.</p>
+<input type="password" id="mypwd" placeholder="Enter Password">
+<button id="toggleBtn">Show</button>
+
+<p>6.Display the coordinates of the mouse pointer when moved.  </p>
+
+<p id="coords">Move your mouse anywhere...</p>
+
+<p>7.Prevent the default behavior of a form submission.  </p>
+<p>19.Disable a form submission using event.preventDefault().</p>
+
+<form id="myForm">
+    <input type="text" placeholder="Enter name">
+    <button type="submit">Submit</button>
+</form>
+
+<p id="msg"></p>
+
+
+<p>8.Count the number of times a button is clicked.  </p>
+
+<button id="clickBtn">Click Me</button>
+<p>Total Clicks: <span id="count">0</span></p>
+
+<p>10.Toggle an element's visibility when another element is clicked.  </p>
+<button id="hideBtn">Click to Disappear</button>
+
+
+<button id="togglebtn">Show / Hide Text</button>
+
+<p id="text">This is the content to toggle.</p>
+
+<p>11.Play a sound when a button is clicked.  
+</p>
+<button id="playBtn">Play Sound</button>
+
+<audio id="mySound">
+    <source src="../day9/Mr. Bean - Ringtone _ Cartoon _ Ringtone Z [PB4IqsMeGaI].mp3" type="audio/mpeg">
+</audio>
+
+
+<p>12.Display a loading animation when the page is loading.  </p>
+<div id="loader"></div>
+
+<div id="content" style="display:none;">
+    <h1>Welcome to the Page</h1>
+    <p>The page has fully loaded.</p>
+</div>
+
+<p>13.Change an image when a button is clicked.</p>
+<img id="myImg" src="https://images.pexels.com/photos/28452462/pexels-photo-28452462.jpeg" width="300">
+
+<button id="changebtn">Change Image</button>
+
+<p>14.Handle double-click on a button to change background color.</p>
+<button id="dblBtn">Double-Click Me</button>
+
+
+<p>15.Detect when the user presses the Enter key in an input field.
+</p>
+<input type="text" id="myInput" placeholder="Type something and press Enter">
+
+<p>16.Display a message when the mouse enters and leaves a box.</p>
+<div id="box1" style="width:200px; height:100px; background:lightblue; text-align:center; line-height:100px;">
+    Hover over me
+</div>
+
+<p id="msg1"></p>
+
+<p>17.Create a keylogger that prints every key pressed on the keyboard.</p>
+<p id="keys">Press any key...</p>
+
+<p>18.Show an alert when the user right-clicks anywhere on the page.</p>
+<br>
+
+<p>20.Create a form that validates input only when a field loses focus (blur). 
+</p>
+<form id="myForm1">
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Enter your name">
+    <span id="nameMsg" style="color:red"></span>
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" placeholder="Enter your email">
+    <span id="emailMsg" style="color:red"></span>
+    <br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+
+
+
+<script>
+//1.
+    let btn = document.getElementById("myBtn");
+
+btn.addEventListener("click", function() {
+    btn.innerText = "You Clicked Me!";
+});
+
+//2.
+
+let box = document.getElementById("area");
+
+box.addEventListener("mouseenter", function() {
+    alert("Mouse entered the area!");
+});
+
+//3.Detect when the user presses the "Enter" key.  
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        alert("Enter key pressed!");
+    }
+});
+
+//4.
+let btn1 = document.getElementById("changeBtn");
+
+btn1.addEventListener("click", function() {
+    document.body.style.backgroundColor = "lightgreen";
+});
+
+//5.
+let pwd = document.getElementById("mypwd");
+let btn2 = document.getElementById("toggleBtn");
+
+btn2.addEventListener("click", function() {
+    if (pwd.type === "password") {
+        pwd.type = "text";
+        btn2.innerText = "Hide";    
+    } else {
+        pwd.type = "password";
+        btn2.innerText = "Show";
+    }
+});
+
+//6.
+document.addEventListener("mousemove", function(event) {
+    let x = event.clientX;  
+    let y = event.clientY;  
+
+    document.getElementById("coords").innerText =
+        "X: " + x + " | Y: " + y;
+});
+
+//7.
+//19.Disable a form submission using event.preventDefault().
+
+let form = document.getElementById("myForm");
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();  
+    
+
+    document.getElementById("msg").innerText =
+        "Form submission prevented!";
+});
+
+//8.
+let btn3 = document.getElementById("clickBtn");
+let countText = document.getElementById("count");
+
+let count = 0;
+
+btn3.addEventListener("click", function() {
+    count++;                  
+    countText.textContent = count;   
+});
+
+//9.
+let btn4 = document.getElementById("hideBtn");
+
+btn4.addEventListener("click", function() {
+    btn4.style.display = "none";   
+});
+
+//10.
+let btn5 = document.getElementById("togglebtn");
+let text = document.getElementById("text");
+
+btn5.addEventListener("click", function() {
+
+    if (text.style.display === "none") {
+        text.style.display = "block";   
+    } else {
+        text.style.display = "none";     
+    }
+
+});
+//11.
+let btn6 = document.getElementById("playBtn");
+let sound = document.getElementById("mySound");
+
+btn6.addEventListener("click", function() {
+    sound.play();
+});
+
+//12.
+window.addEventListener("load", function() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("content").style.display = "block";
+});
+
+//13.
+let img = document.getElementById("myImg");
+let btn7 = document.getElementById("changebtn");
+
+btn7.addEventListener("click", function() {
+    img.src = "https://images.pexels.com/photos/35074705/pexels-photo-35074705.jpeg";   
+});
+
+//14.
+let btn9 = document.getElementById("dblBtn");
+
+btn9.addEventListener("dblclick", function() {
+    document.body.style.backgroundColor = "orange";
+});
+
+//15.
+let input = document.getElementById("myInput");
+
+input.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        alert("You pressed Enter!");
+    }
+});
+
+//16.
+let box1 = document.getElementById("box1");
+let msg = document.getElementById("msg1");
+
+box1.addEventListener("mouseenter", function() {
+    msg.innerText = "Mouse entered the box!";
+});
+
+box1.addEventListener("mouseleave", function() {
+    msg.innerText = "Mouse left the box!";
+});
+
+//17.
+document.addEventListener("keydown", function(event) {
+    document.getElementById("keys").innerText =
+        "You pressed: " + event.key;
+});
+
+//18.
+document.addEventListener("contextmenu", function(event) {
+    event.preventDefault();  // prevent the default right-click menu
+    alert("Right-click detected!");
+});
+
+//20.
+let nameInput = document.getElementById("name");
+let emailInput = document.getElementById("email");
+
+nameInput.addEventListener("blur", function() {
+    if (nameInput.value.trim() === "") {
+        document.getElementById("nameMsg").innerText = "Name is required!";
+    } else {
+        document.getElementById("nameMsg").innerText = "";
+    }
+});
+
+emailInput.addEventListener("blur", function() {
+    if (emailInput.value.trim() === "") {
+        document.getElementById("emailMsg").innerText = "Email is required!";
+    } else if (!emailInput.value.includes("@")) {
+        document.getElementById("emailMsg").innerText = "Enter a valid email!";
+    } else {
+        document.getElementById("emailMsg").innerText = "";
+    }
+});
+
+
+</script>
+</body>
+</html>
