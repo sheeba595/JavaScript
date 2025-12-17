@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+        //1.Create an array of employees with name, age, and position.  
+
+        let employees=[
+            {name:"Adan",age:22,position:"Senior developer"},
+            {name:"Krishnan",age:21,position:"Java Developer"},
+            {name:"Shyam",age:23,position:"Sql Associate"},
+            {name:"Jerome",age:22,position:"Cloud computing"}
+        ];
+        console.log(...employees);
+        //3.Sort an array of objects by age in ascending order.  
+
+        employees.sort((a, b) => {
+    return a.age - b.age;
+});
+console.log("After sorting: ",employees);
+//7.Modify an object inside an array and update its value.  
+let products = [
+  { id: 1, title: "Laptop", price: 50000 },
+  { id: 2, title: "Phone", price: 20000 }
+];
+console.log(...products);
+ let product = products.find(p => p.id === 2);
+
+if (product) {
+  product.price = 25000;   
+}
+
+console.log("After updation: ",products);
+//9.Implement a search function to find objects dynamically.  
+function searchProduct (searchText)
+{
+    return products.find(product=>
+    product.title.toLowerCase()===searchText.toLowerCase());
+    
+}
+ console.log("Searched Product",searchProduct("Laptop"));
+
+//10.Group objects based on a property value.  
+
+let brands = [
+  { title: "iPhone", category: "Mobile" },
+  { title: "Samsung", category: "Mobile" },
+  { title: "HP Laptop", category: "Laptop" },
+  { title: "Dell Laptop", category: "Laptop" }
+];
+let grouped = {};
+
+for (let product of brands) {
+  let key = product.category;
+  grouped[key] = grouped[key] || [];
+  grouped[key].push(product);
+}
+
+console.log("grouped objects: ",grouped);
+
+//11.Remove a specific object from an array by property
+let updated_brands=brands.filter(
+    brand=>(brand.title!=="Samsung")
+);
+console.log("Updated : ",updated_brands);
+
+        //2.Fetch and display a list of products from an API.  
+
+        fetch('https://dummyjson.com/products')
+.then(res => res.json())
+.then(data=>{
+        let products=data.products;
+
+    for(let product of products )
+    {
+        console.log(product.title);
+    }
+     //5.5.Find a specific product in an array by name. 
+let product_name=products.find(product=>(
+product.title==="Cucumber"));
+console.log(product_name);
+
+//6.Convert an array of objects to only an array of names.  
+let product_array=products.map(product=>(
+     product.title
+));
+console.log(product_array);
+    
+})
+.catch(err=>{
+    console.log("error: ",err.message);
+});
+
+
+
+ //4.Filter an array to show only students with grade 'A'.  
+
+ let students=[
+    {name:"sheeba",grade:"A"},{name:"Jeeva",grade:"A+"},{name:"edwin",grade:"A"},{name:"john",grade:"C"},{name:"Jade",age:"O"}
+ ];
+ let stud_grade=students.filter(student=>(
+    student.grade==="A"
+ ));
+ console.log("A grade students: ",stud_grade);   
+
+ //12.Add new objects dynamically to an array. 
+let gadgets = [
+  { id: 1, title: "Laptop", price: 50000 }
+];
+function addProduct(id,title,price)
+{
+    gadgets.push(
+        {
+            id:id,title:title,price:price
+        }
+    );
+}
+addProduct(2,"Samsung",20000);
+console.log("Gadgets: ",gadgets);
+
+//13.Merge two arrays of objects.
+let objects_merge=[...brands,...gadgets];
+console.log("Merged: ",objects_merge);
+
+//14.Clone an array of objects without affecting the original.
+
+let clonedProducts = products.map(product => ({ ...product }));
+
+clonedProducts[0].price = 60000;
+
+console.log("Products: ",products);        // unchanged
+console.log("Cloned Products: ",clonedProducts); // changed
+
+
+//15.Create a function to calculate the total stock in an inventory.
+
+let inventory = [
+  { name: "Laptop", stock: 10 },
+  { name: "Phone", stock: 25 },
+  { name: "Tablet", stock: 15 }
+];
+function calculateTotalStock(items) {
+  return items.reduce((sum, item) => sum + item.stock, 0);
+}
+
+console.log("Stocks in inventory totoal: ",calculateTotalStock(inventory));
+
+//8.Count how many objects meet a specific condition.  
+let count=0;
+for(let invent of inventory)
+{
+    if(invent.stock>10)
+    {
+        count++;
+    }
+}
+console.log("Count: ",count);
+     </script>
+</body>
+</html>
